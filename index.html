@@ -4,9 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portafolio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+   <header class="header">
+      <section class="container">
+          <div class="logo">
+              <a href="index.html">George Basulto</a>
+          </div>
+          <button class="menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"/>
+            </svg>
+            <svg class="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"/>
+            </svg>
+          </button>
+          <nav class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#acerca">Acerca</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#portafolio">Portafolio</a>
+            <a href="#testimonios">Testimonio</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+      </section>
+    </header>
+    <section id="inicio" class="home">
+        <article class="hero-image" style="--hero-image:url('../assets/hero-image-home.jpg');
+        --attachment: fixed">
+            <aside class="hero-image-opacity" style="--hero-opacity-color:var(--black-alpha-color);">
+                <div class="hero-image-content">
+                    <h2 class="hero-image-title" style="--hero-text-color:var(--white-color);">
+                        Bienvenid@s<br>a mi sitio
+                    </h2>
+                    <a href="#contacto" class="btn">CONT&Aacute;CTAME</a>
+
+                </div>
+            </aside>
+        </article>
+    </section>
+    <section id="acerca" class="about">
+        <article>
+            <aside class="slogan">
+                <h1>George Basulto</h1>
+                <h5>FrontEnd Developer</h5>
+            </aside>
+            <p>Desde 2004 tengo experiencia en el área del desarrollo web y la educación. Imparto clases, conferencias y capacitaciones para personas, empresas, instituciones educativas y comunidades en Internet.
+            </p>
+            <p>También colaboro en proyectos como Freelance FullStack. Estoy más orientado al Frontend, pero también hago Backend.
+            </p>
+            <p> Disfruto llevar a cabo la maquetación e interactividad de interfaces web, así como la optimización, para el buen posicionamiento y el rendimiento de carga de sitios y aplicaciones web.
+            </p>
+            <p>También cuento con experiencia en el área de Social Media, Marketing de Contenidos y SEO.</p>
+            <div>
+                <a href="https://my.indeed.com/p/georgeluisb-29oua97" target="_blank" rel="noopener" class="btn">Descarga mi CV</a>
+            </div>
+        </article>
+        <article>
+            <img class="gray-scale" src="assets/geo1.jpg" alt="Ing.George Basulto">
+        </article>
+        <article>
+            <h2>Mis Habilidades</h2>
+            <div class="progress">
+                <p>
+                    <b>Desarrollo Web FrontEnd</b>
+                    <b>90%</b>
+                </p>
+                <progress value="90" min="0" max="100"></progress>
+            </div>
+            <div class="progress">
+                <p>
+                    <b>Diseño Web</b>
+                    <b>85%</b>
+                </p>
+                <progress value="85" min="0" max="100"></progress>
+            </div>
+            <div class="progress">
+                <p>
+                    <b>WPO y SEO</b>
+                    <b>80%</b>
+                </p>
+                <progress value="80" min="0" max="100"></progress>
+            </div>
+            <div class="progress">
+                <p>
+                    <b>Desarrollo Web BackEnd</b>
+                    <b>75%</b>
+                </p>
+                <progress value="75" min="0" max="100"></progress>
+            </div>
+            <div class="progress">
+                <p>
+                    <b>Social Media y Marqueting de Contenidos</b>
+                    <b>60%</b>
+                </p>
+                <progress value="60" min="0" max="100"></progress>
+            </div>
+        </article>
+        <h2>Acerca</h2>
+    </section>
+    <section id="servicios" class="services">
+        <h2>Servicios</h2>
+    </section>
+    <section id="portafolio" class="portfolio">
+        <h2>Trabajos</h2>
+    </section>
+    <section id="testimonios" class="testimonials">
+        <h2>Testimonios</h2>
+    </section>
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+    </section>
+    <footer class="footer">
+        <small>Sitio creado por &copy; <a href="http://" target="_blank" rel="noopener">George Luis Basulto Reyes</a></small>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
-</html>
+</html>   
