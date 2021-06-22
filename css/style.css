@@ -88,7 +88,7 @@ p{
 }
 
 
-/***** Components *****/
+/*************** Components **************/
 
 /***** HeroImage *****/
 
@@ -181,7 +181,45 @@ p{
     }
 }
 
-/***** ProgressBar *****/
+/**** Modal  ****/
+
+.modal{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--black-alpha-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+.modal-content{
+    position: relative;
+}
+.modal-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.modal-close svg{
+    width: 3rem;
+    height: 3rem;
+    fill:var(--first-color);
+}
+
+.modal[id|="trabajo"]:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/**** ProgressBar ****/
 
 progress{
     width: 100%;
@@ -211,7 +249,9 @@ progress::-moz-progress-bar{
 
 
 /***** Utilities *****/
-
+.bg-gray-light{
+    background-color: var(--gray-light-color);
+}
 .box-shadow-1{
     box-shadow: .25rem .25rem 1rem rgba(0, 0, 0, 0.25);
 }
@@ -235,6 +275,49 @@ progress::-moz-progress-bar{
     max-width: var(--max-width); 
 }
 
+.gray-scale{
+    filter: grayscale(1);
+}
+
+.section{
+    padding: 2rem 1rem;
+}
+
+.section-title{
+    border-top: thin solid var(--first-color);
+    border-bottom: thin solid var(--first-color);
+    width: 250px;
+    margin: 2rem auto;
+    padding: .5rem 1rem;
+    text-align: center;
+    color: var(--title-color);
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+@media screen and (min-width:1024px ) {
+    .full-lg-screen{
+        width: 100%;
+        min-height: 100vh;
+    }
+    .text-lg-center{
+        text-align: center;
+    }
+    .text-lg-left{
+        text-align: left;
+    }
+    .text-lg-right{
+        text-align: right;
+    }
+}
+
 .none{
     display: none;
 }
@@ -242,6 +325,10 @@ progress::-moz-progress-bar{
 
 
 /***** Site Styles *****/
+
+.about > article{
+    margin-bottom: 2rem;
+}
 .header{
     position: fixed;
     left: 0;
@@ -266,17 +353,142 @@ progress::-moz-progress-bar{
     text-decoration: none;
 }
 
+.portfolio-card{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.portfolio-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-card-info{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--first-alpha-color);
+    color:var(--white-color);
+    padding:1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease-in-out;
+}
+.portfolio-card:hover .portfolio-card-info{
+    opacity: 1;
+    pointer-events: auto;
+}
+.portfolio-card-info > div{
+    padding: 1rem;
+    border: thin solid var(--white-color);
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio-modal{
+    background-color: var(--white-color);
+    padding: 1rem;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.portfolio-modal h3{
+    border-bottom: medium solid var(--first-color);
+    padding: .5rem 0;
+    margin: 1rem auto;
+    color:var(--title-color);
+}
+.portfolio-details{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-auto-rows: 2rem;
+}
+.portfolio-details b{
+    color: var(--first-color);
+}
+.service-card{
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.service-card svg{
+  margin-bottom: 1.25rem;
+  fill: var(--first-color)
+}
+.service-card h3{
+    color:var(--title-color);
+}
 
 @media screen and (min-width: 768px) {
+    .portfolio > .container{
+        display: grid;
+        gap:5px;
+        grid-template-columns: repeat(2,45%);
+        justify-content: center;
+        align-content: center;
+    }
+    .portfolio .section-title{
+        grid-column: span 2;
+    }
+        
+    .services > .container{
+        display: grid;
+        grid-template-columns: repeat(2,45%);
+        justify-content: center;
+        align-content: center;
+    }
+    .services .section-title{
+        grid-column: span 2;
+    }
+
     
 }
 
 @media screen and (min-width: 1024px){
+
+    .about{
+        display: grid;
+        grid-template-columns: repeat(3,30%);
+        justify-content: space-between;
+        align-content: center;
+    }
     .header{
         position: sticky;
         top:0;
         padding: .5rem;
         height: calc(var(--header-height)- 0.5rem);
+    }
+
+    .portfolio > .container{
+       grid-template-columns: repeat(3,1fr);
+       
+    }
+    .portfolio .section-title{
+        grid-column: span 3;
+    }
+
+    .portfolio-modal{
+        flex-direction: row;
+        max-width: 800px;
+        
+    }
+
+    .portfolio-info{
+        margin-left: 1rem;
+        align-self: center;
+    }
+    
+    .services > .container{
+        grid-template-columns: repeat(3,30%);
+    }
+    .services .section-title{
+        grid-column: span 3;
     }
 }
 
