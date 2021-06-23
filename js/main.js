@@ -16,3 +16,44 @@
               
          })
 })(document);
+
+((d)=>{
+      
+    d.addEventListener("click", e=>{
+        // console.log(e.target)
+        if(!e.target.matches(".carrusel label")) return false;
+        // console.log(e.target.id)
+        switch (e.target.id) {
+            case "dot-1":
+                d.querySelector(".carrusel .slide-1").classList.add("active");
+                d.querySelector(".carrusel .slide-2").classList.remove("active");
+                d.querySelector(".carrusel .slide-3").classList.remove("active");
+                d.querySelector(".carrusel .slide-4").classList.remove("active");
+            break;
+            case "dot-2":
+                 d.querySelector(".carrusel .slide-2").classList.add("active");
+                 d.querySelector(".carrusel .slide-1").classList.remove("active");
+                 d.querySelector(".carrusel .slide-3").classList.remove("active");
+                 d.querySelector(".carrusel .slide-4").classList.remove("active");
+            break;
+            case "dot-3":
+                 d.querySelector(".carrusel .slide-3").classList.add("active");
+                 d.querySelector(".carrusel .slide-4").classList.remove("active");
+                 d.querySelector(".carrusel .slide-1").classList.remove("active");
+                 d.querySelector(".carrusel .slide-2").classList.remove("active");
+            break;
+            case "dot-4":
+                d.querySelector(".carrusel .slide-4").classList.add("active");
+                d.querySelector(".carrusel .slide-1").classList.remove("active");
+                d.querySelector(".carrusel .slide-2").classList.remove("active");
+                d.querySelector(".carrusel .slide-3").classList.remove("active");
+            break;
+                            
+            default:
+                d.querySelector(".carrusel .slide-1").classList.add("active");
+            break;
+        }
+    })
+      
+
+})(document);
