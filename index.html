@@ -483,9 +483,14 @@
             </aside>
             </article>
             <form class="contact-form box-shadow-1">
-                <input type="text" name="name" placeholder="Ingresa su nombre" title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
-                <input type="email" name="email" placeholder="Ingresa tu email" title="Email incorrecto"
+                <div class="contents">
+                    <input type="text" name="name" placeholder="Ingresa su nombre" title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+                </div>
+                <div class="contents">
+                    <input type="email" name="email" placeholder="Ingresa tu email" title="Email incorrecto"
                 pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                </div>
+                
                 <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios"
                 title="Tu comentario no debe exceder los 255 caracteres" data-pattern="^.{1,255}$" required></textarea>
                 <div class="contact-form-loader text-center none">
@@ -509,7 +514,7 @@
         </div>
     </section>
     <footer class="footer">
-        <small>Sitio creado por &copy; <a href="http://" target="_blank" rel="noopener">George Luis Basulto Reyes</a></small>
+        <small>Sitio creado por &copy; <a href="http://" target="_blank" rel="noopener">Ing. George L  Basulto Reyes</a></small>
     </footer>
 
     <script src="js/main.js"></script>

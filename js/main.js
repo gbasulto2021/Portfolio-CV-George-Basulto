@@ -57,3 +57,77 @@
       
 
 })(document);
+
+((d)=>{
+    $inputs =d.querySelectorAll(".contact-form [required]");
+
+    $inputs.forEach((input)=>{
+          const $span = d.createElement("SPAN");
+          $span.id = input.name;
+          $span.textContent = input.title;
+          $span.classList.add("contact-form-error", "none");
+          input.insertAdjacentElement("afterend", $span);
+          
+          
+    });
+    d.addEventListener("keyup", (e)=>{
+          
+        if(e.target.matches(".contact-form [required]")){
+          let $input = e.target,
+              patron = $input.pattern || $input.dataset.pattern;
+              // console.log(patron);
+              
+              if(patron && $input.value !== ""){
+                  // console.log("Tiene patron");
+                  let regex = new RegExp(patron);
+                  return !regex.exec($input.value)
+                  ? d.getElementById($input.name).classList.add("is-active")
+                  : d.getElementById($input.name).classList.remove("is-active");
+
+              }
+              if(!patron){
+                  return $input.value ===""
+                  ? d.getElementById($input.name).classList.add("is-active")
+                  : d.getElementById($input.name).classList.remove("is-active");
+              //    console.log("No tiene patron");
+              }
+
+        }
+   });
+
+   d.addEventListener("submit", (e)=> {
+       e.preventDefault();
+       const $loader = d.querySelector(".contact-form-loader"),
+             $response = d.querySelector(".contact-form-response"),
+             $form = d.querySelector(".contact-form");
+        
+        $loader.classList.remove("none");
+
+       fetch("https://formsubmit.co/ajax/gbasulto2015@gmail.com", {
+           method: "POST",
+           body: new FormData(e.target)
+       } )
+       .then(res => res.ok? res.json(): Promise.reject(res))
+       .then((json)=>{
+           console.log(json);
+           location.hash = "#gracias";
+           $form.reset();
+        })
+        .catch((err)=>{
+            console.log(err);
+            location.hash = "#gracias";
+            let message = err.statusText || "Ocurrio un error al enviar el formulario";
+            $response.querySelector("h3").innerHTML = `<p>Error ${err.status} : ${message}</p>`;
+            
+        })
+        .finally(()=>{
+
+            $loader.classList.add("none");
+            setTimeout(() => {
+              location.hash = "#contacto";
+
+           }, 3000);
+       });
+       
+      });
+})(document);
