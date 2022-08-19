@@ -33,7 +33,8 @@
           $worksTitle = d.querySelectorAll(".portfolio .portfolio-card h3"),
           $worksDescription = d.querySelectorAll(".portfolio .portfolio-card p"),
           $portfolioTitle = d.querySelectorAll(".portfolio-info h3"),
-          $portfolioDescription = d.querySelectorAll(".portfolio-info p")
+          $portfolioDescription = d.querySelectorAll(".portfolio-info p"),
+          $testimonials = d.querySelectorAll(".slide blockquote");
         
         
 
@@ -75,6 +76,8 @@
             ecommerceDescrp:"Electronic commerce for medical equipment sales",
             spaDescrp:"SPA aplication using JS vanilla, fetching data from WordPress API",
             georgeBDescrp:"Portfolio Ing. George L Basulto Reyes, whit his works and skills.",
+            testimonialWilfredo:"The design totally fits what I was looking for. An attractive and clean image in a functional, comfortable and intuitive design. All with personalized attention thanks to which they have been able to make my work known.",
+            testimonialSilvio:"My experience was totally satisfactory. At all times he cares about identifying my needs and adapting to them and my deadlines as much as possible. What I value most about the entire process of creating the website, as well as the subsequent maintenance, is the personalized attention that it offers and transmits it in each management or new need that I have requested."
         },
         es:{
             menuHome: "Inicio",
@@ -111,6 +114,8 @@
             ecommerceDescrp:"Comercio Electronico para la venta de equipamiento medico",
             spaDescrp:"Aplicacion SPA usando solo Java Script y consumiendo la API de WordPress",
             georgeBDescrp:"Portafolio del Ing. George L Basulto Reyes, en donde se pueden observar sus trabajos mas recientes asi como sus habilidades.",
+            testimonialWilfredo:"El diseño se ajusta totalmente a lo que buscaba. Una imagen atractiva y limpia en un diseño funcional, cómodo e intuitivo. Todo con una atención personalizada gracias a la cual se han podido dar a conocer mi trabajo.",
+            testimonialSilvio:"Mi experiencia fue totalmente satisfactoria.En todo momento se preocupo por identificar mis necesidades y adaptarse a ellas y a mis plazos lo máximo posible.Lo que más valoro de todo el proceso de la creación de la web, así como del mantenimiento posterior, es la atención personalizada que ofrece y lo transmite en cada gestión o nueva necesidad que he solicitado.",
         }
     }
 
@@ -148,6 +153,9 @@
           for (let portfolioDescription of $portfolioDescription) {
             portfolioDescription.textContent = lang[portfolioDescription.dataset.description]
           } 
+          for (let testimonial of $testimonials){
+            testimonial.textContent = lang[testimonial.dataset.testimonial]
+          }
 
 
 

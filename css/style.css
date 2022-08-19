@@ -515,7 +515,7 @@ progress::-moz-progress-bar{
 .section-title{
     border-top: thin solid var(--first-color);
     border-bottom: thin solid var(--first-color);
-    width: 250px;
+    width: 300px;
     margin: 2rem auto;
     padding: .5rem 1rem;
     text-align: center;
@@ -661,7 +661,7 @@ progress::-moz-progress-bar{
 .portfolio-card img{
     width: 100%;
     height: 250px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .portfolio-card-info{
