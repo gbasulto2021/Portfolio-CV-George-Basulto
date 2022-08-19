@@ -34,8 +34,12 @@
           $worksDescription = d.querySelectorAll(".portfolio .portfolio-card p"),
           $portfolioTitle = d.querySelectorAll(".portfolio-info h3"),
           $portfolioDescription = d.querySelectorAll(".portfolio-info p"),
-          $testimonials = d.querySelectorAll(".slide blockquote");
-        
+          $testimonials = d.querySelectorAll(".slide blockquote"),
+          $contactFormResponse = d.querySelector(".contact-form-response h3"),
+          $inputsNameEmail = d.querySelectorAll(".contents input[required]"),
+          $textArea = d.querySelector(".contact-form textarea"),
+          $btnSendMessage = d.querySelector(".contact-form input[type='submit']");
+      
         
 
 
@@ -53,16 +57,16 @@
             aboutBtn:"Download my CV",
             aboutExperience:"Since 2004 I have experience in the area of web development, network administration and SQL databases for tourism companies and educational institutions. Also collaborated on small projects as a full stack freelance although I am more oriented to the front-end area. I enjoy making the layout and interactivity of web interfaces",
             skillText:"Skills",
-            skillFront: "FrontEnd Development",
+            skillFront: "Front-end Development",
             skillDesign:"Web Design",
-            skillBackend:"BackEnd Web Development",
+            skillBackend:"Back-end Web Development",
             servicesTitle:"Services",
             webDev:"Web Development",
             webDesign:"Web Design",
             webHost:"Web Hosting",
-            devDescription:"I develop sites and applications for your web platforms I help you build your project from start to finish front-end backend and database",
+            devDescription:"I develop sites and applications for your web platforms I help you build your project from start to finish front-end back-end and databases",
             designDescription:"I prototype and mock up your static designs and turn them into amazing responsive, optimal and accessible web sites and applications",
-            hostDescription:"You do not have a domain and web hosting for your project?Don't worry about those technical things, I'll take care of them",
+            hostDescription:"You do not have a domain and web hosting for your project?.Don't worry about those technical things. I'll take care of them",
             works:"My works",
             workCreditScoring:"Credit Score GTM",
             workWilfredo:"Portfolio of Dr. Wilfredo Campos from the University of Guantánamo",
@@ -77,7 +81,14 @@
             spaDescrp:"SPA aplication using JS vanilla, fetching data from WordPress API",
             georgeBDescrp:"Portfolio Ing. George L Basulto Reyes, whit his works and skills.",
             testimonialWilfredo:"The design totally fits what I was looking for. An attractive and clean image in a functional, comfortable and intuitive design. All with personalized attention thanks to which they have been able to make my work known.",
-            testimonialSilvio:"My experience was totally satisfactory. At all times he cares about identifying my needs and adapting to them and my deadlines as much as possible. What I value most about the entire process of creating the website, as well as the subsequent maintenance, is the personalized attention that it offers and transmits it in each management or new need that I have requested."
+            testimonialSilvio:"My experience was totally satisfactory. At all times he cares about identifying my needs and adapting to them and my deadlines as much as possible.",
+            thanks:`!Thanks
+            <br>
+            For your comments`,
+            contentsName:"Name",
+            contentsEmail:"Email",
+            contentsComments:"Comments",
+            contentBtn:"SEND MESSAGE"
         },
         es:{
             menuHome: "Inicio",
@@ -89,11 +100,11 @@
             heroTitle:"Bienvenidos!",
             heroContact:"CONTÁCTAME",
             aboutBtn:"Descarga mi CV",
-            aboutExperience:" Desde 2004 tengo experiencia en el área del desarrollo web, administracion de redes y bases de datos SQL para compañias de turismo e instituciones educacionales. He colaborado en pequeños proyectos como full stack aunque estoy mas orientado al area de FontEnd. Disfruto llevar a cabo la maquetación e interactividad de interfaces web.",
+            aboutExperience:" Desde 2004 tengo experiencia en el área del desarrollo web, administracion de redes y bases de datos SQL para compañias de turismo e instituciones educacionales. He colaborado en pequeños proyectos como full stack aunque estoy mas orientado al area de Font-end. Disfruto llevar a cabo la maquetación e interactividad de interfaces web.",
             skillText:"Habilidades",
-            skillFront: "Desarrollo Web Front End",
+            skillFront: "Desarrollo Web Front-end",
             skillDesign:"Diseño Web",
-            skillBackend:"Desarrollo Web Back End",
+            skillBackend:"Desarrollo Web Back-end",
             servicesTitle:"Servicios",
             webDev:"Desarrollo Web",
             webDesign:"Diseño Web",
@@ -115,7 +126,14 @@
             spaDescrp:"Aplicacion SPA usando solo Java Script y consumiendo la API de WordPress",
             georgeBDescrp:"Portafolio del Ing. George L Basulto Reyes, en donde se pueden observar sus trabajos mas recientes asi como sus habilidades.",
             testimonialWilfredo:"El diseño se ajusta totalmente a lo que buscaba. Una imagen atractiva y limpia en un diseño funcional, cómodo e intuitivo. Todo con una atención personalizada gracias a la cual se han podido dar a conocer mi trabajo.",
-            testimonialSilvio:"Mi experiencia fue totalmente satisfactoria.En todo momento se preocupo por identificar mis necesidades y adaptarse a ellas y a mis plazos lo máximo posible.Lo que más valoro de todo el proceso de la creación de la web, así como del mantenimiento posterior, es la atención personalizada que ofrece y lo transmite en cada gestión o nueva necesidad que he solicitado.",
+            testimonialSilvio:"Mi experiencia fue totalmente satisfactoria.En todo momento se preocupo por identificar mis necesidades y adaptarse a ellas y a mis plazos lo máximo posible.",
+            thanks:`!Gracias
+            <br>
+            Por sus comentarios`,
+            contentsName:"Ingresa su nombre",
+            contentsEmail:"Ingresa tu email",
+            contentsComments:"Escribe tus comentarios",
+            contentBtn:"ENVIAR MENSAJE"
         }
     }
 
@@ -131,6 +149,9 @@
           $skillTitle.textContent = lang.skillText;
           $servicesTitle.textContent =lang.servicesTitle;
           $works.textContent = lang.works;
+          $contactFormResponse.innerHTML = lang.thanks;
+          $textArea.setAttribute("placeholder",`${lang.contentsComments}`);
+          $btnSendMessage.value = lang.contentBtn;
 
           for (let skill of $skills) {
             skill.textContent = lang[skill.dataset.skill]
@@ -155,6 +176,10 @@
           } 
           for (let testimonial of $testimonials){
             testimonial.textContent = lang[testimonial.dataset.testimonial]
+          }
+
+          for (let input of $inputsNameEmail){
+            input.setAttribute("placeholder", `${lang[input.dataset.name]}`)
           }
 
 
