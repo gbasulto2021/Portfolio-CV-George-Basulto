@@ -38,8 +38,9 @@
           $contactFormResponse = d.querySelector(".contact-form-response h3"),
           $inputsNameEmail = d.querySelectorAll(".contents input[required]"),
           $textArea = d.querySelector(".contact-form textarea"),
-          $btnSendMessage = d.querySelector(".contact-form input[type='submit']");
-      
+          $btnSendMessage = d.querySelector(".contact-form input[type='submit']"),
+          $contentTitle = d.querySelector(".contact .section-title");
+          
         
 
 
@@ -69,7 +70,7 @@
             hostDescription:"You do not have a domain and web hosting for your project?.Don't worry about those technical things. I'll take care of them",
             works:"My works",
             workCreditScoring:"Credit Score GTM",
-            workWilfredo:"Portfolio of Dr. Wilfredo Campos from the University of Guantánamo",
+            workWilfredo:"Portfolio of Dr.C Wilfredo Campos from the University of Guantánamo",
             workUniversityGtm:"Agriculture Campus University of Guantanamo",
             workECommerce:"GB Store",
             workSpa:"SPA App with Vanilla JS",
@@ -85,8 +86,9 @@
             thanks:`!Thanks
             <br>
             For your comments`,
-            contentsName:"Name",
-            contentsEmail:"Email",
+            contentTitle:"CONTACT",
+            contentsName:"Type your Name",
+            contentsEmail:"Type your Email",
             contentsComments:"Comments",
             contentBtn:"SEND MESSAGE"
         },
@@ -130,9 +132,10 @@
             thanks:`!Gracias
             <br>
             Por sus comentarios`,
-            contentsName:"Ingresa su nombre",
-            contentsEmail:"Ingresa tu email",
-            contentsComments:"Escribe tus comentarios",
+            contentTitle:"CONTACTO",
+            contentsName:"Ingrese su nombre",
+            contentsEmail:"Ingrese su email",
+            contentsComments:"Escriba sus comentarios",
             contentBtn:"ENVIAR MENSAJE"
         }
     }
@@ -150,6 +153,7 @@
           $servicesTitle.textContent =lang.servicesTitle;
           $works.textContent = lang.works;
           $contactFormResponse.innerHTML = lang.thanks;
+          $contentTitle.textContent = lang.contentTitle;
           $textArea.setAttribute("placeholder",`${lang.contentsComments}`);
           $btnSendMessage.value = lang.contentBtn;
 
