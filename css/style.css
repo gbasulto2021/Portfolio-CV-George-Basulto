@@ -485,7 +485,7 @@ progress::-moz-progress-bar{
     box-shadow: .25rem .25rem 1rem rgba(0, 0, 0, 0.25);
 }
 
-.btn{
+.btn-contact, .btn-cv, .btn-send{
   border-radius: .5rem;
   padding: 1rem;
   display: inline-block;
@@ -625,6 +625,24 @@ progress::-moz-progress-bar{
     justify-content: space-between;
 }
 
+.container .languaje{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.languaje__en, .languaje__es{
+    width: 30px;
+    padding: 2px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.languaje__en > img, .languaje__es > img{
+    pointer-events: none;
+}
+
 
 .logo a{
     color: var(--first-color);
@@ -642,8 +660,8 @@ progress::-moz-progress-bar{
 
 .portfolio-card img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 250px;
+    object-fit: contain;
 }
 
 .portfolio-card-info{
@@ -676,6 +694,10 @@ progress::-moz-progress-bar{
     max-width: 400px;
     display: flex;
     flex-direction: column;
+}
+.portfolio-modal img{
+    width: 400px;
+    
 }
 .portfolio-modal h3{
     border-bottom: medium solid var(--first-color);

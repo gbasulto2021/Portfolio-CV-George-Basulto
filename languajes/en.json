@@ -1,0 +1,21 @@
+{
+    "menu":{
+            "home": "Home",
+            "about": "About",
+            "services": "Services",
+            "porfolio": "Portfolio",
+            "testimonials": "Testimonial",
+            "contact": "Contact"
+            
+    },
+    "hero":{
+        "title": "Welcome!",
+        "contact": "CONTACT ME"
+    },
+    "about":{
+        "experience": "Since 2004 I have experience in the area of web development, network administration anddatabases for tourism companies and educational institutions. Also collaborated on small projects as a full stack freelance although I am more oriented to the front-end area. I enjoy making the layout and interactivity of web interfaces.",
+        "cv":"Download my CV",
+        "skills":""
+    }
+    
+}
